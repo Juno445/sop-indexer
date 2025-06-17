@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOP Assistant</title>
+
+    <!-- Icons / fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <!-- Markdown renderer -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-tooth"></i>
+                    <h1>SOP Assistant</h1>
+                </div>
+                <p class="subtitle">Your intelligent guide to dental office procedures</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Search Section -->
+            <div class="search-section">
+                <!-- DOMAIN SELECTOR -->
+                <div class="domain-row">
+                    <label for="domainSelect">Search in:</label>
+                    <select id="domainSelect">
+                        <option value="sop" selected>Company SOPs</option>
+                        <option value="support">Support Articles</option>
+                    </select>
+                </div>
+
+                <!-- Input -->
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Ask me about any dental office procedure..."
+                            autocomplete="off"
+                        />
+                        <button id="searchButton" class="search-button">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quick Suggestions -->
+                <div class="suggestions">
+                    <p class="suggestions-label">Try asking about:</p>
+                    <div class="suggestion-tags">
+                        <span class="suggestion-tag" onclick="searchSuggestion('How do I process refunds?')">
+                            <i class="fas fa-tools"></i> Refunds
+                        </span>
+                        <span class="suggestion-tag" onclick="searchSuggestion('What is the patient check-in process?')">
+                            <i class="fas fa-user-check"></i> Patient Check-in
+                        </span>
+                        <span class="suggestion-tag" onclick="searchSuggestion('How do I handle an unexpected closure?')">
+                            <i class="fas fa-first-aid"></i> Emergencies
+                        </span>
+                        <span class="suggestion-tag" onclick="searchSuggestion('What are HIPAA requirements?')">
+                            <i class="fas fa-shield-alt"></i> HIPAA
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsSection" class="results-section" style="display: none;">
+                <!-- Loading -->
+                <div id="loadingState" class="loading-state">
+                    <div class="loading-spinner"></div>
+                    <p>Searching …</p>
+                </div>
+                <!-- Answer -->
+                <div id="answerDisplay" class="answer-display" style="display: none;">
+                    <div class="answer-header">
+                        <i class="fas fa-robot"></i>
+                        <h3>SOP Assistant Response</h3>
+                    </div>
+                    <div id="answerContent" class="answer-content"></div>
+                </div>
+                <!-- Sources -->
+                <div id="sourcesDisplay" class="sources-display" style="display: none;">
+                    <div class="sources-header">
+                        <i class="fas fa-book-open"></i>
+                        <h3>Relevant Sources</h3>
+                    </div>
+                    <div id="sourcesContent" class="sources-content"></div>
+                </div>
+                <!-- New search -->
+                <div id="newSearchSection" class="new-search-section" style="display: none;">
+                    <button id="newSearchButton" class="new-search-button">
+                        <i class="fas fa-plus"></i> Ask Another Question
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 SOP Assistant&nbsp;|&nbsp;Powered by AI</p>
+        </footer>
+    </div>
+
+    <!-- Behaviour -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+# Python
+__pycache__/
+
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+json_data/
+sop_documents/
+
+
+# AI/ML specific
+*.pkl
+*.pickle
+*.model
+*.h5
+*.hdf5
+*.onnx
+
+# Chroma vector databases (keep structure, exclude data)
+chroma_sops/*/
+chromadb_data/*/
+chroma_sops/*.sqlite3
+chromadb_data/*.sqlite3
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+
+# Environment variables
+.env.local
+.env.production
+.env.test
+
+# OCR temporary files
+*_ocr.pdf
+
+# Text extraction audit files (optional - remove this line if you want to track them)
+*/text/*.txt
+
+# Large model files
+*.bin
+*.safetensors
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+__pycache__
+
+# Node.js (if you add any frontend tooling)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log* 
